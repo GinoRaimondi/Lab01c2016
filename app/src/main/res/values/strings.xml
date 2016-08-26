@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lab01c2016</string>
+    <string name="titulo">Calculadora Plazo Fijo</string>
+    <string name="email">Correo electronico</string>
+    <string name="cuit">CUIT</string>
+    <string name="monto_a_invertir">Monto a invertir</string>
+    <string name="dias">Días seeccionados</string>
+    <string name="cantidad_dias">Cantidad de días de la Inversión</string>
+    <string name="rendimiento">Rendimineto</string>
+    <string name="texto_boton">HACER PLAZO FIJO</string>
+    <string name="texto_checkbox">Renovar Automáticamente al Vencimiento</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="t_0_5000_menor30">25</string>
+    <string name="t_0_5000_mayorIgual30">27.5</string>
+    <string name="t_5000_99999_menor30">30</string>
+    <string name="t_5000_99999_mayorIgual30">32.3</string>
+    <string name="t_mas_99999_menor30">35</string>
+    <string name="t_mas_99999_mayorIgual30">38.5</string>
+</resources>
