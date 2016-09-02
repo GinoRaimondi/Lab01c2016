@@ -67,6 +67,13 @@
             android:text="@string/cantidad_dias"
             android:id="@+id/textView5" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/textViewDias"
+            android:layout_gravity="center_horizontal" />
+
         <SeekBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -82,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
+            android:text=""
             android:id="@+id/textView7" />
 
         <CheckBox
@@ -101,7 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
+            android:text=""
             android:id="@+id/textView8" />
     </LinearLayout>
 </RelativeLayout>
