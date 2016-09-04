@@ -6,7 +6,7 @@
     <string name="monto_a_invertir">Monto a invertir</string>
     <string name="dias">Días seeccionados</string>
     <string name="cantidad_dias">Cantidad de días de la Inversión</string>
-    <string name="rendimiento">Rendimineto</string>
+    <string name="rendimiento">Rendimiento</string>
     <string name="texto_boton">HACER PLAZO FIJO</string>
     <string name="texto_checkbox">Renovar Automáticamente al Vencimiento</string>
 </resources>
