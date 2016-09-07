@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         texto = (TextView) findViewById(R.id.textView8);
         textoDias = (TextView) findViewById(R.id.textViewDias);
         SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
-        rendimiento = (TextView) findViewById(R.id.textView6);
+        rendimiento = (TextView) findViewById(R.id.textView7);
 
         t05menor30 = getResources().getString(R.string.t_0_5000_menor30);
         t05mayor30 = getResources().getString(R.string.t_0_5000_mayorIgual30);
