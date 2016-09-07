@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +20,7 @@ import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
     private TextView texto;
+    private TextView rendimiento;
     private TextView textoDias;
     private EditText monto;
     private EditText email;
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         texto = (TextView) findViewById(R.id.textView8);
         textoDias = (TextView) findViewById(R.id.textViewDias);
         SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
+        rendimiento = (TextView) findViewById(R.id.textView6);
 
         t05menor30 = getResources().getString(R.string.t_0_5000_menor30);
         t05mayor30 = getResources().getString(R.string.t_0_5000_mayorIgual30);
@@ -91,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
@@ -99,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(getApplicationContext(), "Changing seekbar's progress", Toast.LENGTH_SHORT).show();
                 textoDias.setText("" + progress);
 
+
+                mostrarInteres();
                 /*int stepSize = 25;
 
                 progress = (progress/stepSize)*stepSize;
@@ -111,6 +116,8 @@ public class MainActivity extends AppCompatActivity {
             public void onStartTrackingTouch(SeekBar seekBar) {
                 textoDias.setText("" + progress);
                 //Toast.makeText(getApplicationContext(), "Started tracking seekbar", Toast.LENGTH_SHORT).show();
+
+
             }
 
             @Override
@@ -119,6 +126,20 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(getApplicationContext(), "Stopped tracking seekbar", Toast.LENGTH_SHORT).show();
 
             }
+        });
+
+        monto.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {
+
+                // you can call or do what you want with your EditText here
+                mostrarInteres();
+
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
         });
 
     }
@@ -141,6 +162,25 @@ public class MainActivity extends AppCompatActivity {
 
         return i_round;
 
+    }
+
+    private void mostrarInteres()
+    {
+        if ((monto.getText().length() == 0) || (progress == 0)) {
+
+
+            if (monto.getText().length() == 0) {
+                rendimiento.setText("Los intereses no pueden ser calculados. Debe ingresar el monto a invertir.");
+            }
+            else{
+                rendimiento.setText("Los intereses no pueden ser calculados. Elija la cantidad de días.");
+            }
+        } else {
+            int monto2 = Integer.parseInt(monto.getText().toString());
+            double interes = calcuarInteres(progress, monto2);
+
+            rendimiento.setText("Intereses ganados: $" + interes);
+        }
     }
 
     private double getTasa(int dias, int monto) {
